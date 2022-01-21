@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchImages } from "./api";
 
 function Header () {
@@ -50,14 +50,20 @@ function Gallery (props) {
 }
 
 function Main () {
-	const urls = null;
+
+	// useState の引数は状態の初期値
+	// 戻り値：現在の状態の値, 状態を更新する関数
+	// setUrls()　で状態を更新するたびにこのコンポーネントの関数が実行、
+	//   現在の状態を反映した JSX 式が返される
+	const [urls, setUrls] = useState(null);
 
 	// Dog API から柴犬の画像を取得 (コンソールで確認。ログを表示にすること)
 	// 第1引数: 副作用を起こす関数
 	// 第2引数: その副作用が依存する値のリストの配列(値が変わると再度副作用を起こす)
   useEffect(() => {
     fetchImages("shiba").then((urls) => {
-      console.log(urls);
+      // console.log(urls);
+			setUrls(urls);
     });
   }, []);
 
@@ -76,11 +82,7 @@ function Footer () {
 	return (
 		<footer className="footer">
 			<div className="content has-text-centered">
-				<p>Dog images are retrieved from Dog API</p>
-				<p>
-					<a href="https://dog.ceo/dog-api/about">Donate to Dog
-						API</a>
-				</p>
+				<p>Dog images are retrieved from <a href="https://dog.ceo/dog-api/about">Dog API</a></p>
 			</div>
 		</footer>
 	);
@@ -88,11 +90,11 @@ function Footer () {
 
 function App () {
 	return (
-		<div>
+		<>
 			<Header/>
 			<Main/>
 			<Footer/>
-		</div>
+		</>
 	);
 }
 
