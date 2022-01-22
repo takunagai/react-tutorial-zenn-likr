@@ -1,6 +1,7 @@
 # Reactチュートリアル1：犬画像ギャラリーを作ろう
 
-[» Reactチュートリアル1：犬画像ギャラリーを作ろう - Zenn](https://zenn.dev/likr/articles/6be53ca64f29aa035f07)
+* [Reactチュートリアル1：犬画像ギャラリーを作ろう - Zenn](https://zenn.dev/likr/articles/6be53ca64f29aa035f07)
+* [動作デモ](https://hopeful-goldwasser-f53917.netlify.app/)
 
 極力シンプルな構成で、React Web アプリの基本の基本をスッキリ学べる。
 
