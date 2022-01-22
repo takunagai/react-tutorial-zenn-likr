@@ -52,8 +52,9 @@ function Gallery (props) {
 function Form(props) {
 	function handleSubmit (event) {
 		event.preventDefault();
-		const { breed } = event.target.elements;
-		props.onFormSubmit(breed.value);
+		const { breed } = event.target.elements; // HTMLSelectElement(select要素)を返す
+		// console.table(breed);
+		props.onFormSubmit(breed.value); // value に選択されたものがセットされている
 	}
   return (
 		<form onSubmit={handleSubmit}>
